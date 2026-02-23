@@ -1,1 +1,274 @@
-Hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yuhan Zhang</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f7;
+      --text: #1a1a1a;
+      --muted: #666;
+      --accent: #8b1a1a;
+      --border: #e0ddd8;
+      --sidebar-width: 220px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      position: sticky;
+      top: 40px;
+      text-align: center;
+    }
+
+    .sidebar img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      margin-bottom: 18px;
+      /* placeholder gradient if no image */
+      background: linear-gradient(135deg, #d6cfc4, #b5aca0);
+    }
+
+    .sidebar h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .sidebar .email {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+      word-break: break-all;
+    }
+
+    .sidebar .affiliation {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .affiliation a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .sidebar .affiliation a:hover { text-decoration: underline; }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      font-size: 0.88rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Main Content ── */
+    main { min-width: 0; }
+
+    .bio {
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .bio a { color: var(--accent); text-decoration: none; }
+    .bio a:hover { text-decoration: underline; }
+
+    .bio strong { font-weight: 500; }
+
+    section { margin-bottom: 38px; }
+
+    section h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* Projects */
+    .project-list { list-style: none; }
+
+    .project-list li {
+      padding: 6px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .project-list li:last-child { border-bottom: none; }
+
+    .project-list .label {
+      font-weight: 500;
+      color: var(--muted);
+      min-width: 130px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .project-list a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-list a:hover { text-decoration: underline; }
+
+    /* About / Awards / Service */
+    .bullet-list { list-style: none; }
+
+    .bullet-list li {
+      padding: 5px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      color: #333;
+    }
+
+    .bullet-list li:last-child { border-bottom: none; }
+
+    .bullet-list li::before {
+      content: "·";
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- Replace src with your photo path -->
+    <img src="photo/YuhanZhang.png" alt="Yuhan Zhang" onerror="this.style.background='linear-gradient(135deg,#d6cfc4,#b5aca0)'"/>
+    <h1>Yuhan Zhang</h1>
+    <div class="email">yuhancz@stanford.edu</div>
+    <div class="affiliation">
+      <a href="#">Laboratory for Computation &amp; Language in Minds &amp; Brains</a><br/>
+      <a href="#">Department of Linguistics</a><br/>
+      <a href="#">Stanford University</a><br/>
+      Office: Stanford BIO-X
+    </div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="publications.html">Publications</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main>
+    <p class="bio">
+      I am a postdoctoral scholar in the <a href="#">Department of Linguistics</a> at
+      <a href="#">Stanford University</a>, affiliated with
+      <a href="#">Stanford BIO-X</a>.
+      I am interested in <strong>computational psycholinguistics</strong> and <strong>language neuroscience</strong>, with a focus on understanding the cognitive representations
+      and computation that enable the human brain to make sense of the world via language in an efficient way, and how this perspective helps us 
+      better understand the nature of computational language models.
+    </p>
+
+    <!-- Recent Projects -->
+    <section>
+      <h2>Recent Projects</h2>
+      <ul class="project-list">
+        <li>
+          <span class="label">Linguistic Illusions</span>
+          <span><a href="#">Depth-charge illusion</a>, <a href="#">Comparative illusion</a></span>
+        </li>
+        <li>
+          <span class="label">Models of language processing</span>
+          <span><a href="#">Bayesian modeling and acceptability</a>, <a href="#">LLMs with illusion</a></span>
+        </li>
+        <li>
+          <span class="label">Neuroimaging (fMRI)</span>
+          <span><a href="#">Bayesian inference of language illusion in the brain</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- About Me -->
+    <section>
+      <h2>About Me</h2>
+      <ul class="bullet-list">
+        <li>Postdoc, Linguistics, Stanford University, 2024 – Present</li>
+        <li>Ph.D., Linguistics, Harvard University, 2018 – 2024</li>
+        <li>B.A., English, Tsinghua University, 2014 – 2018</li>
+      </ul>
+    </section>
+
+    <!-- News -->
+    <section>
+      <h2>News</h2>
+      <ul class="bullet-list">
+        <li>Poster presentation at HSP, March 2026 </li>
+      </ul>
+    </section>
+
+    <!-- Collaborators -->
+    <section>
+      <h2>Collaborators</h2>
+      <ul class="bullet-list">
+        <li>Kathryn Davidson (Harvard)</li>
+        <li>Edward Gibson (MIT)</li>
+      </ul>
+    </section>
+  </main>
+
+</div>
+
+</body>
+</html>
