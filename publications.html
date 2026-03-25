@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuhan Zhang</title>
+  <title>Publications | Yuhan Zhang</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <!-- Include Font Awesome via CDN in <head> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -111,15 +111,15 @@
     }
 
     .affiliation a,
-    .bio a,
-    .project-list a {
+    .intro a,
+    .entry a {
       color: var(--accent);
       text-decoration: none;
     }
 
     .affiliation a:hover,
-    .bio a:hover,
-    .project-list a:hover {
+    .intro a:hover,
+    .entry a:hover {
       text-decoration: underline;
     }
 
@@ -189,21 +189,37 @@
     main {
       min-width: 0;
       padding-top: 8px;
+      max-width: 860px;
     }
 
-    .bio {
-      max-width: 880px;
-      font-size: 1.02rem;
+    .intro {
+      margin-bottom: 28px;
+      font-size: 1rem;
       color: #2a2521;
-      margin-bottom: 46px;
     }
 
-    .bio strong { font-weight: 500; }
-
-    section {
-      max-width: 940px;
-      margin-bottom: 42px;
+    .jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 34px;
     }
+
+    .jump-links a {
+      border: 1px solid var(--border);
+      background: #fffdfa;
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 13px;
+      font-size: 0.84rem;
+    }
+
+    .jump-links a:hover {
+      color: var(--accent);
+      border-color: #c9b09d;
+    }
+
+    section { margin-bottom: 38px; }
 
     section h2 {
       font-family: 'EB Garamond', serif;
@@ -214,46 +230,37 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .project-list,
-    .bullet-list {
-      list-style: none;
+    .pub-list {
+      margin-left: 1.35rem;
     }
 
-    .project-list li {
-      display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 14px;
-      padding: 14px 0;
+    .pub-list li {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
-      font-size: 0.96rem;
     }
 
-    .project-list li:last-child,
-    .bullet-list li:last-child {
+    .pub-list li:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
 
-    .label {
-      color: var(--muted);
-      font-size: 0.8rem;
+    .title-line {
+      font-size: 0.99rem;
+      color: #2b2622;
       font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding-top: 2px;
     }
 
-    .bullet-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.96rem;
-      color: #2f2a27;
+    .authors-line {
+      font-size: 0.94rem;
+      color: #3a332f;
+      margin-top: 2px;
     }
 
-    .bullet-list li::before {
-      content: "·";
-      color: var(--accent);
-      font-weight: bold;
-      margin-right: 9px;
+    .meta {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-top: 3px;
     }
 
     @media (max-width: 980px) {
@@ -278,11 +285,6 @@
 
       .icon-row {
         flex-wrap: wrap;
-      }
-
-      .project-list li {
-        grid-template-columns: 1fr;
-        gap: 6px;
       }
     }
 
@@ -317,7 +319,6 @@
         Office: Stanford BIO-X
       </div>
       <div class="icon-row" aria-label="Profile links">
-        
         <a class="icon-link" href="https://scholar.google.com/citations?user=ilLOQFAAAAAJ&hl=en" target="_blank" rel="noreferrer" aria-label="Google Scholar link placeholder" title="Google Scholar">
         <i class="ai ai-google-scholar"></i>
         </a>
@@ -339,58 +340,102 @@
 
       </div>
       <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="publications.html">Publications</a>
+        <a href="index.html">Home</a>
+        <a href="publications.html" class="active">Publications</a>
         <a href="presentations.html">Presentations</a>
       </nav>
     </aside>
 
     <main>
-      <p class="bio">
-        I am a postdoctoral scholar in the <a href="https://linguistics.stanford.edu/" target="_blank" rel="noreferrer">Department of Linguistics</a> at
-        <a href="https://www.stanford.edu/" target="_blank" rel="noreferrer">Stanford University</a>, 
-        working with <a href="https://climblab.org/members/cory_shain" target="_blank" rel="noreferrer">Cory Shain</a> 
-        in <a href="https://climblab.org/" target="_blank" rel="noreferrer">the CLiMB Lab</a>. I study <strong>computational psycholinguistics</strong> and
-        <strong>language neuroscience</strong>, with a focus on the cognitive representations and computations that enable the human brain to interpret language efficiently,
-        and on how AI and computational language models can inform us about language processing in humans.
-      </p>
 
-      <p class="bio">
-        I obtained my Ph.D. from Harvard University, working in 
-        <a href="https://kathryndavidson.scholars.harvard.edu/" target="_blank" rel="noreferrer">Kathryn Davidson's Meaning and Modality Lab</a> and 
-        <a href="https://tedlab.mit.edu/" target="_blank" rel="noreferrer">Ted Gibson's psycholinguistics lab</a> in 
-        <a href="https://bcs.mit.edu/" target="_blank" rel="noreferrer">MIT's Brain and Cognitive Sciences department</a>. 
-        Before that, I was an undergrad at Tsinghua University.
-      </p>
+      <div class="jump-links">
+        <a href="#pipeline">In the Pipeline</a>
+        <a href="#journal">Journal Articles</a>
+        <a href="#proceedings">Conference Proceedings</a>
+      </div>
 
-      <section>
-        <h2>Current Projects</h2>
-        <ul class="project-list">
+      <section id="pipeline">
+        <h2>In the Pipeline</h2>
+        <ol class="pub-list">
           <li>
-            <span class="label">Language and Cognition</span>
-            <span>Linguistic illusions and Bayesian noisy-channel explanations</span>
+            <div class="title-line">Graded strength of comparative illusions is explained by Bayesian inference.</div>
+            <div class="authors-line">Yuhan Zhang, Erxiao Wang &amp; Cory Shain.</div>
+            <div class="meta">Under review.</div>
           </li>
           <li>
-            <span class="label">Computational Language Models</span>
-            <span>Memory constraints in LLMs and their illumination on human sentence processing </span>
+            <div class="title-line">Universality in the interpretation of logical constructions: Evidence from English, Hungarian, Mandarin Chinese, and Spanish.</div>
+            <div class="authors-line">Masoud Jasbi, Natalia Bermudez, Yuhan Zhang, Reka Siro &amp; Kathryn Davidson.</div>
+            <div class="meta">Under review.</div>
           </li>
-          <li>
-            <span class="label">Language Neuroscience</span>
-            <span>Ongoing research on fMRI and MEA methods into language processing mechanisms</span>
-          </li>
-        </ul>
+        </ol>
       </section>
 
-      <section>
-        <h2>Education</h2>
-        <ul class="bullet-list">
-          <li>Postdoctoral Scholar, Linguistics, Stanford University, 2024 - Present</li>
-          <li>Ph.D., Linguistics, Harvard University, 2018 - 2024</li>
-          <li>B.A., English, Tsinghua University, 2014 - 2018</li>
-        </ul>
+      <section id="journal">
+        <h2>Peer-reviewed Journal Articles</h2>
+        <ol class="pub-list">
+          <li>
+            <div class="title-line">Comparative illusions are evidence of rational inference in language comprehension.</div>
+            <div class="authors-line">Yuhan Zhang, Carina Kauf, Roger Levy &amp; Edward Gibson.</div>
+            <div class="meta">Journal of Experimental Psychology: General. (2025).</div>
+          </li>
+          <li>
+            <div class="title-line">Interpreting referential noun phrases in belief reports: the de re/de dicto competition.</div>
+            <div class="authors-line">Yuhan Zhang &amp; Kathryn Davidson. </div>
+            <div class="meta">Glossa Psycholinguistics. (2024).</div>
+          </li>
+          <li>
+            <div class="title-line">A noisy-channel approach to the depth-charge illusion.</div>
+            <div class="authors-line">Yuhan Zhang, Rachel Ryskin &amp; Edward Gibson.</div>
+            <div class="meta">Cognition. (2023).</div>
+          </li>
+          <li>
+            <div class="title-line">Associative Group Analysis on the psychological meaning of "suicide": Evidence from Chinese students in five geographically different colleges.</div>
+            <div class="authors-line">Yihong Gao &amp; Yuhan Zhang.</div>
+            <div class="meta">Journal of PLA University of Foreign Languages (In Chinese). (2019).</div>
+          </li>
+          <li>
+            <div class="title-line">Psychological meanings of "suicide" for Chinese college students: A semantic differential study.</div>
+            <div class="authors-line">Yihong Gao &amp; Yuhan Zhang.</div>
+            <div class="meta">Discourse Studies Forum (In Chinese). (2017).</div>
+          </li>
+        </ol>
       </section>
 
-
+      <section id="proceedings">
+        <h2>Conference Proceedings</h2>
+        <ol class="pub-list">
+          <li>
+            <div class="title-line">Can language models be tricked by language illusions? Easier with syntax, harder with semantics.</div>
+            <div class="authors-line">Yuhan Zhang, Edward Gibson &amp; Forrest Davis. </div>
+            <div class="meta">The SIGNLL Conference on Computational Natural Language Learning (CoNLL). (2023).</div>
+          </li>
+          <li>
+            <div class="title-line">Crosslinguistic consistency in the interpretation of logical connectives: The case of English, Hungarian, Spanish, and Mandarin Chinese.</div>
+            <div class="authors-line">Masoud Jasbi, Natalia Bermudez, Yuhan Zhang, Reka Siro &amp; Kathryn Davidson. </div>
+            <div class="meta">Proceedings of the Annual Meeting of the Cognitive Science Society. (2023).</div>
+          </li>
+          <li>
+            <div class="title-line">Feedback Effect in User Interaction with Intelligent Assistants: Delayed Engagement, Adaption and Drop-out.</div>
+            <div class="authors-line">Zidi Xiu, Kai-Chen Cheng, David Q. Sun, Jiannan Lu, Hadas Kotek, Yuhan Zhang, Paul McCarthy, Christopher Klein, Stephen Pulman &amp; Jason D. Williams.</div>
+            <div class="meta">Pacific-Asia Conference on Knowledge Discovery and Data Mining. (2023).</div>
+          </li>
+          <li>
+            <div class="title-line">Representing affect information in word embeddings.</div>
+            <div class="authors-line">Yuhan Zhang, Wenqi Chen, Ruihan Zhang &amp; Xiajie Zhang. </div>
+            <div class="meta">Experiments in Linguistic Meaning, 2. (2022).</div>
+          </li>
+          <li>
+            <div class="title-line">De re interpretation in belief reports: An experimental investigation.</div>
+            <div class="authors-line">Yuhan Zhang &amp; Kathryn Davidson. </div>
+            <div class="meta">Experiments in Linguistic Meaning, 1. (2021).</div>
+          </li>
+          <li>
+            <div class="title-line">Partial dependency of vowel reduction on stress shift: Evidence from English -ion nominalization.</div>
+            <div class="authors-line">Yuhan Zhang. </div>
+            <div class="meta">Proceedings of the 2020 Annual Meetings on Phonology. (2021).</div>
+          </li>
+        </ol>
+      </section>
     </main>
   </div>
 </body>

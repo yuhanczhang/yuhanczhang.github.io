@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentations | Yuhan Zhang</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f4ef;
+      --surface: rgba(255, 255, 255, 0.78);
+      --text: #1f1a17;
+      --muted: #6c635d;
+      --accent: #8a1f1f;
+      --border: #ddd1c6;
+      --shadow: 0 18px 42px rgba(60, 39, 24, 0.08);
+      --sidebar-width: 348px;
+      --container-width: 1320px;
+      --gap: 72px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(203, 173, 141, 0.18), transparent 30%),
+        linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 56px 36px 72px;
+      display: grid;
+      grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 32px;
+      padding: 28px 26px;
+      border: 1px solid rgba(221, 209, 198, 0.9);
+      background: var(--surface);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-wrap {
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .sidebar img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid #f3ebe3;
+      background: linear-gradient(135deg, #d6cfc4, #b5aca0);
+      box-shadow: 0 10px 28px rgba(71, 49, 31, 0.14);
+    }
+
+    .sidebar h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.05rem;
+      font-weight: 600;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .email,
+    .affiliation {
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .email {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
+
+    .email a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .email a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .affiliation {
+      font-size: 0.92rem;
+      line-height: 1.62;
+      margin-bottom: 16px;
+    }
+
+    .affiliation a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .affiliation a:hover {
+      text-decoration: underline;
+    }
+
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .icon-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fffdfa;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .icon-link:hover {
+      transform: translateY(-1px);
+      color: var(--accent);
+      border-color: #c9b09d;
+    }
+
+    .icon-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .icon-link i {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 0;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.18s ease, padding-left 0.18s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--accent);
+    }
+
+    main {
+      min-width: 0;
+      padding-top: 8px;
+      max-width: 900px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+      font-size: 1rem;
+      color: #2a2521;
+    }
+
+    .year-block + .year-block {
+      margin-top: 28px;
+    }
+
+    .year {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .presentation-list {
+      margin-left: 1.35rem;
+    }
+
+    .presentation-list li {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .presentation-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .title-line {
+      font-size: 0.99rem;
+      color: #2b2622;
+      font-weight: 500;
+    }
+
+    .authors-line {
+      font-size: 0.94rem;
+      color: #3a332f;
+      margin-top: 2px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-top: 3px;
+    }
+
+    section h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --container-width: 100%;
+        --sidebar-width: 1fr;
+        --gap: 30px;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .sidebar img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .icon-row {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 26px 18px 48px;
+      }
+
+      .sidebar {
+        padding: 22px 18px;
+      }
+
+      .sidebar img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="portrait-wrap">
+        <img src="photo/YuhanZhang.png" alt="Yuhan Zhang" onerror="this.style.background='linear-gradient(135deg,#d6cfc4,#b5aca0)'" />
+      </div>
+      <h1>Yuhan Zhang</h1>
+      <div class="email"><a href="mailto:yuhancz@stanford.edu">yuhancz@stanford.edu</a></div>
+      <div class="affiliation">
+        <a href="https://climblab.org/" target="_blank" rel="noreferrer">Laboratory for Computation &amp; Language in Minds &amp; Brains</a><br />
+        <a href="https://linguistics.stanford.edu/" target="_blank" rel="noreferrer">Department of Linguistics</a><br />
+        <a href="https://www.stanford.edu/" target="_blank" rel="noreferrer">Stanford University</a><br />
+        Office: Stanford BIO-X
+      </div>
+      <div class="icon-row" aria-label="Profile links">
+        
+        <a class="icon-link" href="https://scholar.google.com/citations?user=ilLOQFAAAAAJ&hl=en" target="_blank" rel="noreferrer" aria-label="Google Scholar link placeholder" title="Google Scholar">
+        <i class="ai ai-google-scholar"></i>
+        </a>
+        <a class="icon-link" href="https://docs.google.com/document/d/1UZU2jeN2GoiXTleGM2Ha2aPv0QDXsAFe/edit?usp=sharing&ouid=112085809164402984250&rtpof=true&sd=true" target="_blank" rel="noreferrer" aria-label="CV link placeholder" title="CV">
+        <i class="ai ai-cv"></i>
+        </a>
+        <a class="icon-link" href="https://osf.io/vmnf3/" target="_blank" rel="noreferrer" aria-label="OSF link placeholder" title="OSF">
+        <i class="ai ai-osf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/yuhanczhang" target="_blank" rel="noreferrer" aria-label="GitHub link placeholder" title="GitHub">
+        <i class="fab fa-github"></i>
+        </a>
+        <a class="icon-link" href="https://x.com/YuhanZhang_" target="_blank" rel="noreferrer" aria-label="Twitter link placeholder" title="Twitter">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/yuhan-claire-zhang/" target="_blank" rel="noreferrer" aria-label="LinkedIn link placeholder" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+        </a>
+
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="presentations.html" class="active">Presentations</a>
+      </nav>
+    </aside>
+
+    <main>
+
+      <section>
+        <h2>Conference Presentations</h2>
+        <div class="year-block">
+          <div class="year">2026</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">Sentence processing is surprisingly robust to verbatim repetition.</div>
+              <div class="authors-line">Erxiao Wang, Ekaterina S. Ivshina, Yuhan Zhang &amp; Cory Shain.</div>
+              <div class="meta">The 39th Annual Conference on Human Sentence Processing, Massachusetts Institute of Technology, March 26-28, 2026. Talk.</div>
+            </li>
+            <li><div class="title-line">Human-like self-embedding difficulty without human-like memory constraints.</div>
+              <div class="authors-line">Yuhan Zhang, Advay Aravind, Cyn Fang, Edward Gibson &amp; Cory Shain.</div>
+              <div class="meta">The 39th Annual Conference on Human Sentence Processing, Massachusetts Institute of Technology, March 26-28, 2026. Poster.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <div class="year">2025</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">Graded strength of comparative illusions is explained by Bayesian inference.</div><div class="authors-line">Yuhan Zhang, Erxiao Wang &amp; Cory Shain.</div><div class="meta">The 8th California Meeting on Psycholinguistics, University of California, Davis, November 14-16, 2025. Talk.</div></li>
+            <li><div class="title-line">Processing deep recursive structures in humans and LLMs.</div><div class="authors-line">Yuhan Zhang, Advay Aravind, Cyn Fang, Edward Gibson &amp; Cory Shain.</div><div class="meta">The 8th California Meeting on Psycholinguistics, University of California, Davis, November 14-16, 2025. Poster.</div></li>
+            <li><div class="title-line">Distance to plausible alternatives predicts acceptability ratings in comparative illusion.</div><div class="authors-line">Yuhan Zhang, Erxiao Wang &amp; Cory Shain.</div><div class="meta">The 38th Annual Conference on Human Sentence Processing, College Park, Maryland, March 26-28, 2025. Poster.</div></li>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <div class="year">2024</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">A memory-based account of robust negative polarity illusion effects.</div><div class="authors-line">Yuhan Zhang &amp; Edward Gibson.</div><div class="meta">The 37th Annual Conference on Human Sentence Processing, Ann Arbor, Michigan, May 16-18, 2024. Plenary talk.</div></li>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <div class="year">2023</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">Can language models be tricked by language illusions? Easier with syntax, harder with semantics.</div><div class="authors-line">Yuhan Zhang, Edward Gibson &amp; Forrest Davis.</div><div class="meta">The SIGNLL Conference on Computational Natural Language Learning (CoNLL), Singapore, December 6-7, 2023. Talk.</div></li>
+            <li><div class="title-line">A noisy-channel explanation of comparative illusion.</div><div class="authors-line">Yuhan Zhang, Carina Kauf &amp; Edward Gibson.</div><div class="meta">Architectures and Mechanisms for Language Processing, San Sebastian, Spain, September 2-4, 2023. Plenary talk.</div></li>
+            <li><div class="title-line">Crosslinguistic consistency in the interpretation of logical connectives: The case of English, Hungarian, Spanish, and Mandarin Chinese.</div><div class="authors-line">Masoud Jasbi, Natalia Bermudez, Yuhan Zhang, Reka Siro &amp; Kathryn Davidson.</div><div class="meta">Annual Meeting of the Cognitive Science Society, Sydney, Australia, July 26-29, 2023. Poster.</div></li>
+            <li><div class="title-line">Crosslinguistic interpretation of logical connectives: Negation, conjunction, and disjunction in English, Hungarian, and Mandarin Chinese.</div><div class="authors-line">Masoud Jasbi, Natalia Bermudez, Yuhan Zhang, Reka Siro &amp; Kathryn Davidson.</div><div class="meta">The 36th Annual Conference on Human Sentence Processing, Pittsburgh, Pennsylvania, March 9-11, 2023. Poster.</div></li>
+            <li><div class="title-line">Pronoun use reflects gender bias against different occupations.</div><div class="authors-line">Yuhan Zhang, Jiarui Li &amp; Lin Bian.</div><div class="meta">The 36th Annual Conference on Human Sentence Processing, Pittsburgh, Pennsylvania, March 9-11, 2023. Poster.</div></li>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <div class="year">2022</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">Competing de dicto terms reduce de re acceptability.</div><div class="authors-line">Yuhan Zhang &amp; Kathryn Davidson.</div><div class="meta">The 3rd Joint Meeting of the Society for Philosophy and Psychology and the European Society for Philosophy and Psychology, Milan, Italy, July 19-22, 2022. Plenary talk.</div></li>
+            <li><div class="title-line">Affect encoding in word embeddings.</div><div class="authors-line">Yuhan Zhang, Wenqi Chen, Ruihan Zhang &amp; Xiajie Zhang.</div><div class="meta">Experiments in Linguistic Meaning 2, Philadelphia, Pennsylvania, May 18-20, 2022. Short talk.</div></li>
+            <li><div class="title-line">Competing de dicto terms reduce de re acceptability.</div><div class="authors-line">Yuhan Zhang &amp; Kathryn Davidson.</div><div class="meta">Chicago Linguistic Society 58, University of Chicago, Illinois, April 21-24, 2022. Plenary talk.</div></li>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <div class="year">2021</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">A noisy-channel explanation for depth-charge illusions.</div><div class="authors-line">Yuhan Zhang, Rachel Ryskin &amp; Edward Gibson.</div><div class="meta">Architectures and Mechanisms for Language Processing (AMLaP), Universite de Paris, France, September 2-4, 2021. Online plenary talk.</div></li>
+            <li><div class="title-line">How many response options in a TVJT? It depends.</div><div class="authors-line">Yuhan Zhang, Giuseppe Ricciardi &amp; Kathryn Davidson.</div><div class="meta">The 34th Annual CUNY Conference on Human Sentence Processing, Philadelphia, Pennsylvania, March 4-6, 2021. Short talk.</div></li>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <div class="year">2020</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">Partial dependency of vowel reduction on stress shift: Evidence from English -tion nominalization.</div><div class="authors-line">Yuhan Zhang.</div><div class="meta">The 2020 Annual Meeting on Phonology, UC Santa Cruz, California, 2020. Poster.</div></li>
+            <li><div class="title-line">De re interpretation in belief report: An experimental investigation.</div><div class="authors-line">Yuhan Zhang &amp; Kathryn Davidson.</div><div class="meta">Experiments in Linguistic Meaning Conference, Philadelphia, Pennsylvania, 2020. Poster.</div></li>
+            <li><div class="title-line">Stress shift is proportional and vowel reduction is not deterministic: a corpus case study of English -tion nominalization.</div><div class="authors-line">Yuhan Zhang.</div><div class="meta">Linguistic Society of America 2020 Annual Meeting, New Orleans, Louisiana, 2020. Poster.</div></li>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <div class="year">2019</div>
+          <ul class="presentation-list">
+            <li><div class="title-line">Prediction or processing burden: Online processing of classifier and noun-noun compound in Mandarin.</div><div class="authors-line">Yuhan Zhang &amp; Peng Zhou.</div><div class="meta">The 32nd Annual CUNY Conference on Human Sentence Processing, Boulder, Colorado, 2019. Poster.</div></li>
+            <li><div class="title-line">Prediction or processing burden: Online processing of classifier and noun-noun compound in Mandarin.</div><div class="authors-line">Yuhan Zhang &amp; Peng Zhou.</div><div class="meta">The 2nd International Conference on Theoretical East Asian Psycholinguistics, Beijing, China, 2019. Poster.</div></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
