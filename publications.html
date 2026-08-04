@@ -356,6 +356,7 @@
         <a href="index.html">Home</a>
         <a href="publications.html" class="active">Publications</a>
         <a href="presentations.html">Presentations</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
       </nav>
     </aside>
 
@@ -371,7 +372,8 @@
         <h2>In the Pipeline</h2>
         <ol class="pub-list">
           <li>
-            <div class="title-line">Noisy memory encoding explains negative polarity illusions.</div>
+            <div class="title-line"><a href="https://arxiv.org/abs/2606.04340" target="_blank" rel="noreferrer">
+              Noisy memory encoding explains negative polarity illusions.</a></div>
             <div class="authors-line">Yuhan Zhang &amp; Edward Gibson.</div>
             <div class="meta">Submitted.</div>
           </li>
@@ -466,5 +468,21 @@
       </section>
     </main>
   </div>
+  <script>
+    (() => {
+      const visitorKey = "yuhan-website-visitor-counted-v1";
+      if (!localStorage.getItem(visitorKey)) {
+        const counter = new Image();
+        counter.onload = () => localStorage.setItem(visitorKey, "true");
+        counter.src = "https://visitor-badge.one9x.com/badge?page_id=yuhanczhang.github.io&namespace=yuhanzhang&unique=true&timeframe=86400";
+        var _wau = window._wau || [];
+        _wau.push(["small", "yuhanzhang26", "___"]);
+        const tracker = document.createElement("script");
+        tracker.async = true;
+        tracker.src = "https://waust.at/s.js";
+        document.body.appendChild(tracker);
+      }
+    })();
+  </script>
 </body>
 </html>

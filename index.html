@@ -112,14 +112,16 @@
 
     .affiliation a,
     .bio a,
-    .project-list a {
+    .project-list a,
+    .bullet-list a {
       color: var(--accent);
       text-decoration: none;
     }
 
     .affiliation a:hover,
     .bio a:hover,
-    .project-list a:hover {
+    .project-list a:hover,
+    .bullet-list a:hover {
       text-decoration: underline;
     }
 
@@ -250,8 +252,9 @@
     }
 
     .bullet-list li::before {
-      content: "·";
+      content: ">>";
       color: var(--accent);
+      font-size: 1.4rem;
       font-weight: bold;
       margin-right: 9px;
     }
@@ -342,6 +345,7 @@
         <a href="index.html" class="active">Home</a>
         <a href="publications.html">Publications</a>
         <a href="presentations.html">Presentations</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
       </nav>
     </aside>
 
@@ -382,14 +386,40 @@
       </section>
 
       <section>
-        <h2>News</h2>
+        <h2>Updates</h2>
         <ul class="bullet-list">
-          <li> I received <a href="https://biox.stanford.edu/taxonomy/term/186" target="_blank" rel="noreferrer">Stanford Bio-X Postdoctoral Fellowship</a> that supports my research on intracortical neural mechanisms in language processing, as a collaboration with <a href="https://nptl.stanford.edu/" target="_blank" rel="noreferrer">the Neural Prosthetics Translational Lab at Stanford</a>.</li>
+          <li> 08/2026: I received 
+            <a href="https://biox.stanford.edu/taxonomy/term/186" target="_blank" rel="noreferrer">Stanford Bio-X 
+              Postdoctoral Fellowship</a> that supports my research on intracortical neural mechanisms in 
+              language processing, as a collaboration with 
+              <a href="https://nptl.stanford.edu/" target="_blank" rel="noreferrer">the Neural Prosthetics Translational Lab 
+                at Stanford</a>.
+          </li>
+          <li> 06/2026: New <a href="https://arxiv.org/abs/2606.04340" target="_blank" rel="noreferrer">preprint</a>
+             on how negative polarity illusions can be explained by resource-rational interactions between working memory and language. 
+          </li>
+            
         </ul>
       </section>
 
 
     </main>
   </div>
+  <script>
+    (() => {
+      const visitorKey = "yuhan-website-visitor-counted-v1";
+      if (!localStorage.getItem(visitorKey)) {
+        const counter = new Image();
+        counter.onload = () => localStorage.setItem(visitorKey, "true");
+        counter.src = "https://visitor-badge.one9x.com/badge?page_id=yuhanczhang.github.io&namespace=yuhanzhang&unique=true&timeframe=86400";
+        var _wau = window._wau || [];
+        _wau.push(["small", "yuhanzhang26", "___"]);
+        const tracker = document.createElement("script");
+        tracker.async = true;
+        tracker.src = "https://waust.at/s.js";
+        document.body.appendChild(tracker);
+      }
+    })();
+  </script>
 </body>
 </html>
